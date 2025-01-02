@@ -20,8 +20,8 @@ public class ControllerCoreMstCities {
 		return servCmcit.getCmcitListAll();
 	}
 	
-	@GetMapping("/appmst/getCmkecListByKecCode")
-	public List<CoreMstCities> getKecamatanListByKecCode(String CityCode){
+	@GetMapping("/appmst/getCmcitListByCityCode")
+	public List<CoreMstCities> getCitiesListByCityCode(String CityCode){
 		return servCmcit.getCmcitListByCityCode(CityCode);
 	}
 
