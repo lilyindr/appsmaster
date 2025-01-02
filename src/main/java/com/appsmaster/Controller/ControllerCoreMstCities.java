@@ -21,7 +21,7 @@ public class ControllerCoreMstCities {
 	}
 	
 	@GetMapping("/appmst/getCmcitListByCityCode")
-	public List<CoreMstCities> getCitiesListByCityCode(String CityCode){
+	public List<CoreMstCities> getCityListByCityCode(String CityCode){
 		return servCmcit.getCmcitListByCityCode(CityCode);
 	}
 
