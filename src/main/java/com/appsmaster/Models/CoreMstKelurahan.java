@@ -28,7 +28,7 @@ public class CoreMstKelurahan {
 	private String cmkelKecCode;
 	
 	@Column(name="cmkel_created_by", length=40)
-	private String cmkelCreatedBy;
+	private String cmkelCreateBy;
 	
 	@Column(name="cmkel_created_date")
 	private Date cmkelCreateDate;

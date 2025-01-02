@@ -28,7 +28,7 @@ public class CoreMstKecamatan {
 	private String cmkecCityCode;
 	
 	@Column(name="cmkec_created_by", length=40)
-	private String cmkecCreatedBy;
+	private String cmkecCreateBy;
 	
 	@Column(name="cmkec_created_date")
 	private Date cmkecCreateDate;

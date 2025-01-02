@@ -25,7 +25,7 @@ public class CoreMstProvinsi {
 	private String cmpsiProvinsi;
 		
 	@Column(name="cmpsi_created_by", length=40)
-	private String cmpsiCreatedBy;
+	private String cmpsiCreateBy;
 	
 	@Column(name="cmpsi_created_date")
 	private Date cmpsiCreateDate;

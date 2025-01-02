@@ -28,7 +28,7 @@ public class CoreMstCities {
 	private String cmcitProvCode;
 	
 	@Column(name="cmcit_created_by", length=40)
-	private String cmcitCreatedBy;
+	private String cmcitCreateBy;
 	
 	@Column(name="cmcit_created_date")
 	private Date cmcitCreateDate;
