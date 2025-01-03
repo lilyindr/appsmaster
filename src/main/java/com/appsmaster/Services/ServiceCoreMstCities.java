@@ -21,5 +21,9 @@ public class ServiceCoreMstCities {
 	public List<CoreMstCities> getCmcitListByCityCode(String CityCode){
 		return repoCmcit.findBycmcitCityCode(CityCode);
 	}
+	
+	public List<CoreMstCities> getCmcitListByProvCode(String ProvCode){
+		return repoCmcit.findBycmcitProvCode(ProvCode);
+	}
 
 }

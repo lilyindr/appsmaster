@@ -24,5 +24,10 @@ public class ControllerCoreMstKecamatan {
 	public List<CoreMstKecamatan> getKecamatanListByKecCode(String KecCode){
 		return servCmkec.getCmkecListByKecCode(KecCode);
 	}
+	
+	@GetMapping("/appmst/getCmkecListByCityCode")
+	public List<CoreMstKecamatan> getKecamatanListByCityCode(String CityCode){
+		return servCmkec.getCmkecListByCityCode(CityCode);
+	}
 
 }

@@ -21,5 +21,9 @@ public class ServiceCoreMstKecamatan {
 	public List<CoreMstKecamatan> getCmkecListByKecCode(String KecCode){
 		return repoCmkec.findBycmkecKecCode(KecCode);
 	}
+	
+	public List<CoreMstKecamatan> getCmkecListByCityCode(String CityCode){
+		return repoCmkec.findBycmkecCityCode(CityCode);
+	}
 
 }
