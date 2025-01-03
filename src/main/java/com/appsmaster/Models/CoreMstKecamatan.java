@@ -27,19 +27,19 @@ public class CoreMstKecamatan {
 	@Column(name="cmkec_city_code", length=10)
 	private String cmkecCityCode;
 	
-	@Column(name="cmkec_created_by", length=40)
+	@Column(name="cmkec_create_by", length=40)
 	private String cmkecCreateBy;
 	
-	@Column(name="cmkec_created_date")
+	@Column(name="cmkec_create_date")
 	private Date cmkecCreateDate;
 		
-	@Column(name="cmkec_updated_date")
+	@Column(name="cmkec_update_date")
 	private Date cmkecUpdateDate;
 	
 	@Column(name="cmkec_started_timestamp")
 	private Date cmkecStartedTimestamp;
 	
-	@Column(name="cmkec_updated_by", length=40)
+	@Column(name="cmkec_update_by", length=40)
 	private String cmkecUpdateBy;
 
 }

@@ -24,19 +24,19 @@ public class CoreMstProvinsi {
 	@Column(name="cmpsi_provinsi", length=100)
 	private String cmpsiProvinsi;
 		
-	@Column(name="cmpsi_created_by", length=40)
+	@Column(name="cmpsi_create_by", length=40)
 	private String cmpsiCreateBy;
 	
-	@Column(name="cmpsi_created_date")
+	@Column(name="cmpsi_create_date")
 	private Date cmpsiCreateDate;
 		
-	@Column(name="cmpsi_updated_date")
+	@Column(name="cmpsi_update_date")
 	private Date cmpsiUpdateDate;
 	
 	@Column(name="cmpsi_started_timestamp")
 	private Date cmpsiStartedTimestamp;
 	
-	@Column(name="cmpsi_updated_by", length=40)
+	@Column(name="cmpsi_update_by", length=40)
 	private String cmpsiUpdateBy;
 
 }

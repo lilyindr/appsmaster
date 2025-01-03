@@ -10,5 +10,7 @@ import com.appsmaster.Models.CoreMstCities;
 public interface ICoreMstCitiesRepository extends JpaRepository<CoreMstCities,String>{
 	
 	public List<CoreMstCities> findBycmcitCityCode(String CityCode);
+	
+	public List<CoreMstCities> findByCmcitProvCode(String ProvCode);
 
 }

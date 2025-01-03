@@ -10,5 +10,7 @@ import com.appsmaster.Models.CoreMstKelurahan;
 public interface ICoreMstKelurahanRepository extends JpaRepository<CoreMstKelurahan,String> {
 	
 	public List<CoreMstKelurahan> findBycmkelKelCode(String KelCode);
+	
+	public List<CoreMstKelurahan> findByCmkelKecCode(String KecCode);
 
 }

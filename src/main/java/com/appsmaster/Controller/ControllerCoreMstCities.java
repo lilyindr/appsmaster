@@ -24,5 +24,10 @@ public class ControllerCoreMstCities {
 	public List<CoreMstCities> getCityListByCityCode(String CityCode){
 		return servCmcit.getCmcitListByCityCode(CityCode);
 	}
+	
+	@GetMapping("/appmst/getCmcitListByProvCode")
+	public List<CoreMstCities> getCityListByProvCode(String ProvCode){
+		return servCmcit.getCmcitListByProvCode(ProvCode);
+	}
 
 }

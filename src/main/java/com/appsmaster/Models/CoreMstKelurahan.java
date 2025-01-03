@@ -27,19 +27,19 @@ public class CoreMstKelurahan {
 	@Column(name="cmkel_kec_code", length=10)
 	private String cmkelKecCode;
 	
-	@Column(name="cmkel_created_by", length=40)
+	@Column(name="cmkel_create_by", length=40)
 	private String cmkelCreateBy;
 	
-	@Column(name="cmkel_created_date")
+	@Column(name="cmkel_create_date")
 	private Date cmkelCreateDate;
 		
-	@Column(name="cmkel_updated_date")
+	@Column(name="cmkel_update_date")
 	private Date cmkelUpdateDate;
 	
 	@Column(name="cmkel_started_timestamp")
 	private Date cmkelStartedTimestamp;
 	
-	@Column(name="cmkel_updated_by", length=40)
+	@Column(name="cmkel_update_by", length=40)
 	private String cmkelUpdateBy;
 
 }

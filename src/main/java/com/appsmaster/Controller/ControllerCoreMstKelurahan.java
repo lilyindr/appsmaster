@@ -24,5 +24,10 @@ public class ControllerCoreMstKelurahan {
 	public List<CoreMstKelurahan> getKelurahanListByKelCode(String KelCode){
 		return servCmkel.getCmkelListByKelCode(KelCode);
 	}
+	
+	@GetMapping("/appmst/getCmkelListByKecCode")
+	public List<CoreMstKelurahan> getKelurahanListByKecCode(String KecCode){
+		return servCmkel.getCmkelListByKecCode(KecCode);
+	}
 
 }

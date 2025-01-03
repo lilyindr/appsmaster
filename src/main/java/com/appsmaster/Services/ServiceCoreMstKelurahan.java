@@ -21,5 +21,9 @@ public class ServiceCoreMstKelurahan {
 	public List<CoreMstKelurahan> getCmkelListByKelCode(String KelCode){
 		return repoCmkel.findBycmkelKelCode(KelCode);
 	}
+	
+	public List<CoreMstKelurahan> getCmkelListByKecCode(String KecCode){
+		return repoCmkel.findByCmkelKecCode(KecCode);
+	}
 
 }

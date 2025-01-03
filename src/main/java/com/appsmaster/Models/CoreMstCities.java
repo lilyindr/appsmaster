@@ -27,19 +27,19 @@ public class CoreMstCities {
 	@Column(name="cmcit_prov_code", length=10)
 	private String cmcitProvCode;
 	
-	@Column(name="cmcit_created_by", length=40)
+	@Column(name="cmcit_create_by", length=40)
 	private String cmcitCreateBy;
 	
-	@Column(name="cmcit_created_date")
+	@Column(name="cmcit_create_date")
 	private Date cmcitCreateDate;
 		
-	@Column(name="cmcit_updated_date")
+	@Column(name="cmcit_update_date")
 	private Date cmcitUpdateDate;
 	
 	@Column(name="cmcit_started_timestamp")
 	private Date cmcitStartedTimestamp;
 	
-	@Column(name="cmcit_updated_by", length=40)
+	@Column(name="cmcit_update_by", length=40)
 	private String cmcitUpdateBy;
 	
 	@Column(name="cmcit_sandi_bi", length=10)
