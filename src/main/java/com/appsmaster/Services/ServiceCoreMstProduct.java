@@ -17,5 +17,10 @@ public class ServiceCoreMstProduct {
 	public List<CoreMstProduct> getCmprListAll(){
 		return repoCmpr.findAll();
 	}
+	
+	public String saveUpdateProduct(CoreMstProduct Prod) {
+		repoCmpr.save(Prod);
+		return "Submit Successfully";
+	}
 
 }

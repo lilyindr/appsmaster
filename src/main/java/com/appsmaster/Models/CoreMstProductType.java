@@ -39,19 +39,19 @@ public class CoreMstProductType {
 	@Column(name="cmprt_type_alias", length = 50)
 	private String cmprtTypeAlias;
 	
-	@Column(name="cmprt_web_link", length = 30)
+	@Column(name="cmprt_img_filename", length = 60)
 	private String cmprtWebLink;
 	
-	@Column(name="cmprt_mb_link", length = 30)
+	@Column(name="cmprt_img_filepath", length = 100)
 	private String cmprtMbLink;
 	
-	@Column(name="cmprt_created_by", length=40)
+	@Column(name="cmprt_created_by", length=10)
 	private String cmprtCreateBy;
 	
 	@Column(name="cmprt_created_date")
 	private Date cmprtCreateDate;
 	
-	@Column(name="cmprt_updated_by", length=40)
+	@Column(name="cmprt_updated_by", length=10)
 	private String cmprtUpdateBy;
 	
 	@Column(name="cmprt_updated_date")
