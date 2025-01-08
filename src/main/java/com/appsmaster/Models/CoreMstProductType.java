@@ -40,10 +40,10 @@ public class CoreMstProductType {
 	private String cmprtTypeAlias;
 	
 	@Column(name="cmprt_img_filename", length = 60)
-	private String cmprtWebLink;
+	private String cmprtImgFilename;
 	
 	@Column(name="cmprt_img_filepath", length = 100)
-	private String cmprtMbLink;
+	private String cmprtImgFilepath;
 	
 	@Column(name="cmprt_created_by", length=10)
 	private String cmprtCreateBy;

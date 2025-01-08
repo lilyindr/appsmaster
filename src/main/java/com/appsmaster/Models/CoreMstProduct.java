@@ -25,10 +25,10 @@ public class CoreMstProduct {
 	private String cmprName;
 	
 	@Column(name="cmpr_img_filename", length=60)
-	private String cmprWebLink;
+	private String cmprImgFilename;
 	
 	@Column(name="cmpr_img_filepath", length=100)
-	private String cmprMbLink;
+	private String cmprImgFilepath;
 	
 	@Column(name="cmpr_created_by", length=10)
 	private String cmprCreateBy;
