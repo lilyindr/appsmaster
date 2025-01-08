@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "core_mst_param")
+@Table(name = "core_mst_product")
 public class CoreMstProduct {
 	
 	@Id
@@ -24,19 +24,19 @@ public class CoreMstProduct {
 	@Column(name="cmpr_name", length=100)
 	private String cmprName;
 	
-	@Column(name="cmpr_web_link", length=30)
+	@Column(name="cmpr_img_filename", length=60)
 	private String cmprWebLink;
 	
-	@Column(name="cmpr_mb_link", length=30)
+	@Column(name="cmpr_img_filepath", length=100)
 	private String cmprMbLink;
 	
-	@Column(name="cmpr_created_by", length=40)
+	@Column(name="cmpr_created_by", length=10)
 	private String cmprCreateBy;
 	
 	@Column(name="cmpr_created_date")
 	private Date cmprCreateDate;
 	
-	@Column(name="cmpr_updated_by", length=40)
+	@Column(name="cmpr_updated_by", length=10)
 	private String cmprUpdateBy;
 	
 	@Column(name="cmpr_updated_date")
