@@ -11,6 +11,6 @@ public interface ICoreMstKecamatanRepository extends JpaRepository<CoreMstKecama
 	
 	public List<CoreMstKecamatan> findBycmkecKecCode(String KecCode);
 	
-	public List<CoreMstKecamatan> findByCmkecCityCode(String CityCode);
+	public List<CoreMstKecamatan> findBycmkecCityCode(String CityCode);
 
 }

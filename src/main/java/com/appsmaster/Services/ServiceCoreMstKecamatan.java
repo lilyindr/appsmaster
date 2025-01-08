@@ -23,9 +23,7 @@ public class ServiceCoreMstKecamatan {
 	}
 	
 	public List<CoreMstKecamatan> getCmkecListByCityCode(String CityCode){
-		return repoCmkec.findByCmkecCityCode(CityCode);
+		return repoCmkec.findBycmkecCityCode(CityCode);
 	}
-	
-	
 
 }

@@ -11,6 +11,6 @@ public interface ICoreMstKelurahanRepository extends JpaRepository<CoreMstKelura
 	
 	public List<CoreMstKelurahan> findBycmkelKelCode(String KelCode);
 	
-	public List<CoreMstKelurahan> findByCmkelKecCode(String KecCode);
+	public List<CoreMstKelurahan> findBycmkelKecCode(String KecCode);
 
 }

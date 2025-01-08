@@ -9,5 +9,7 @@ import com.appsmaster.Models.CoreMstProductTypeCompKey;
 
 @Repository
 public interface ICoreMstProductTypeRepository extends JpaRepository<CoreMstProductType,CoreMstProductTypeCompKey>{
+	
+	public List<CoreMstProductType> findByCmprtCmprCode(Integer CmprCode);
 
 }

@@ -23,7 +23,7 @@ public class ServiceCoreMstCities {
 	}
 	
 	public List<CoreMstCities> getCmcitListByProvCode(String ProvCode){
-		return repoCmcit.findByCmcitProvCode(ProvCode);
+		return repoCmcit.findBycmcitProvCode(ProvCode);
 	}
 
 }

@@ -11,6 +11,6 @@ public interface ICoreMstCitiesRepository extends JpaRepository<CoreMstCities,St
 	
 	public List<CoreMstCities> findBycmcitCityCode(String CityCode);
 	
-	public List<CoreMstCities> findByCmcitProvCode(String ProvCode);
+	public List<CoreMstCities> findBycmcitProvCode(String ProvCode);
 
 }

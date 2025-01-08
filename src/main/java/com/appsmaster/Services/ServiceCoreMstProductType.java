@@ -17,5 +17,14 @@ public class ServiceCoreMstProductType {
 	public List<CoreMstProductType> getCmprtListAll(){
 		return repoCmprt.findAll();
 	}
+	
+	public List<CoreMstProductType> getCmprtListByCmprCode(Integer CmprCode){
+		return repoCmprt.findByCmprtCmprCode(CmprCode);
+	}
+	
+	public String saveUpdateProductType(CoreMstProductType ProdType) {
+		repoCmprt.save(ProdType);
+		return "Submit Successfully";
+	}
 
 }

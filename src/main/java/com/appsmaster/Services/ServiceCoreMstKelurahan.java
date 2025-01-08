@@ -23,7 +23,7 @@ public class ServiceCoreMstKelurahan {
 	}
 	
 	public List<CoreMstKelurahan> getCmkelListByKecCode(String KecCode){
-		return repoCmkel.findByCmkelKecCode(KecCode);
+		return repoCmkel.findBycmkelKecCode(KecCode);
 	}
 
 }
