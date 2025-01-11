@@ -1,6 +1,7 @@
 package com.appsmaster.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,11 @@ public class ControllerCoreMstProductType {
 	@GetMapping("/appmst/getCmprtListByCmprCode")
 	public List<CoreMstProductType> getCmprtListByCmprCode(Integer CmprCode){
 		return servCmprt.getCmprtListByCmprCode(CmprCode);
+	}
+	
+	@GetMapping("/appmst/getCmprTypeSingle")
+	public Optional<CoreMstProductType> getPrTypeCode(Integer code, Integer typecode) {
+		return servCmprt.getPrTypeCode(code, typecode);
 	}
 	
 	@PostMapping("/appmst/saveupdprodtype")
