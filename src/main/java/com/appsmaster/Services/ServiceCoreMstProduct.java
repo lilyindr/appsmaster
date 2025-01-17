@@ -1,6 +1,7 @@
 package com.appsmaster.Services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,10 @@ public class ServiceCoreMstProduct {
 	
 	public List<CoreMstProduct> getCmprListAll(){
 		return repoCmpr.findAll();
+	}
+	
+	public Optional<CoreMstProduct> getPrCode(Integer code){
+	    return repoCmpr.findBycmprCode(code);
 	}
 	
 	public String saveUpdateProduct(CoreMstProduct Prod) {

@@ -1,6 +1,7 @@
 package com.appsmaster.Services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class ServiceCoreMstProductType {
 	
 	public List<CoreMstProductType> getCmprtListByCmprCode(Integer CmprCode){
 		return repoCmprt.findByCmprtCmprCode(CmprCode);
+	}
+	
+	public Optional<CoreMstProductType> getPrTypeCode(Integer code, Integer typecode){
+	    return repoCmprt.findBycmprtCmprCodeAndCmprtCode(code, typecode);
 	}
 	
 	public String saveUpdateProductType(CoreMstProductType ProdType) {
