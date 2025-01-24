@@ -38,6 +38,31 @@ public class ControllerCoreMstProduct {
 		return servCmpr.getCmprListAll();
 	}
 	
+	 @GetMapping("/appmst/gettprod")
+	 
+	    public List<String[]> gettprodlist() throws IOException {
+	    	   int number=0;
+	    	ResponseEntity<List<String>> imglist = getAllImagesInProduct();
+	    	List<String> imageUrls = imglist.getBody();
+	        List<CoreMstProduct> prodlist = servCmpr.getCmprListAll();
+	        List<String[]> data = new ArrayList<>();
+	        
+	       
+	
+	        for (CoreMstProduct prod : prodlist) {
+	        	
+	            String id = prod.getCmprCode().toString(); // Assuming 'id' in CoreMstProduct is of type Long
+	            String name = prod.getCmprName();
+	            String code =imageUrls.get(number); // Assuming CoreMstProduct has a 'code' property
+
+	            data.add(new String[]{id, name, code});
+	            number=number+1;
+	        }
+
+	        return data;
+	    }
+	    
+	
 	@GetMapping("/appmst/getCmprSingle")
 	public Optional<CoreMstProduct> getPrCode(Integer code) {
 		return servCmpr.getPrCode(code);
@@ -47,6 +72,8 @@ public class ControllerCoreMstProduct {
 	public String saveUpdateProd(@RequestBody CoreMstProduct Prod) {
 		return servCmpr.saveUpdateProduct(Prod);	
 	}
+	
+	
 	
 	@GetMapping(value = "/images/productImg/{filename:.+}", produces = MediaType.IMAGE_JPEG_VALUE)
 	public ResponseEntity<byte[]> getImage(
