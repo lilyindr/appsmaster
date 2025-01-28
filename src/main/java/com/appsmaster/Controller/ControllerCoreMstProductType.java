@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.appsmaster.Models.CoreMstProduct;
 import com.appsmaster.Models.CoreMstProductType;
 import com.appsmaster.Services.ServiceCoreMstProductType;
 
@@ -89,6 +93,28 @@ public class ControllerCoreMstProductType {
 	        return ResponseEntity.notFound().build();
 	    }
 	}
+	
+	@PostMapping("/appmst/saveproducttypes")	
+	 public String createproduct(@RequestParam String userid,
+	            @RequestPart("data") CoreMstProductType data,
+	            @RequestPart(value = "file1", required = false) MultipartFile file1	          
+	    ) throws IOException {
+		 	
+		CoreMstProductType createdData = servCmprt.create(data, file1);
+	        System.out.println(" no dtl :");
+	       return "Submit Successfullty";
+	    }
+	
+
+	@PostMapping("/appmst/UpdateProducttypes")
+	 public String UpdateRequest (@RequestParam String id, 
+				 	@RequestParam String userid, 
+				 	@RequestParam String  NoRequest,
+		            @RequestPart("data") CoreMstProductType data,
+		            @RequestPart(value = "file1", required = false) MultipartFile file1) 
+		            		throws IOException {
+		 return servCmprt.update( data, file1);
+	 }
 	
 
 }
