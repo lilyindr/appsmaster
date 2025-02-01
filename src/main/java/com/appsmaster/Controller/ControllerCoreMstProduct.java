@@ -66,7 +66,7 @@ public class ControllerCoreMstProduct {
 	    
 	
 	@GetMapping("/appmst/getCmprSingle")
-	public Optional<CoreMstProduct> getPrCode(Integer code) {
+	public List<CoreMstProduct> getPrCode(Integer code) {
 		return servCmpr.getPrCode(code);
 	}
 	
@@ -89,7 +89,7 @@ public class ControllerCoreMstProduct {
 	}
 	
 	@GetMapping(value = "/images/productImg", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<String>> getAllImagesInProduct( ) throws IOException {
+	public ResponseEntity<List<String>> getAllImagesInProduct() throws IOException {
 	
 	    String sql = "SELECT cmpr_img_filename, cmpr_img_filepath FROM masterscheme.core_mst_product";
 	    Query query = entityManager.createNativeQuery(sql);
@@ -130,12 +130,40 @@ public class ControllerCoreMstProduct {
 	@PostMapping("/appmst/UpdateProducts")
 	 public String UpdateRequest (@RequestParam String id, 
 				 	@RequestParam String userid, 
-				 	@RequestParam String  NoRequest,
 		            @RequestPart("data") CoreMstProduct data,
 		            @RequestPart(value = "file1", required = false) MultipartFile file1) 
 		            		throws IOException {
 		 return servCmpr.update( data, file1);
 	 }
+	
+	
+	@GetMapping(value = "/images/productImgbyId", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<String>> getAllImagesInProductbyId(@RequestParam Integer no) throws IOException {
+	
+	    String sql = "SELECT cmpr_img_filename, cmpr_img_filepath FROM irasia.core_mst_product where cmpr_code =:no";
+	    Query query = entityManager.createNativeQuery(sql);
+	    query.setParameter("no", no);
+	    List<Object[]> results = query.getResultList(); // Get all results
+	    List<String> imageUrls = new ArrayList<>();
+	    String baseUrl = "http://localhost:8090/am-svc/images/productImg/";
+
+	    for (Object[] result : results) { // Iterate through each result
+	        String filename = (String) result[0];
+	        String filepath = (String) result[1];
+	       
+	        if (filename != null && !filename.isEmpty() && filepath != null && !filepath.isEmpty()) {
+	            Path imagePath = Paths.get("D:\\iasia\\UI\\IMAGES\\Products");
+	            if (Files.exists(imagePath)) {
+	                imageUrls.add(baseUrl + filename);
+	            }
+	        }
+	    }
+	    if (!imageUrls.isEmpty()) {
+	        return ResponseEntity.ok(imageUrls);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
+	}
 	  
 
 }

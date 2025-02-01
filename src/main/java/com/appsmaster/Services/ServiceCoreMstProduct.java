@@ -28,7 +28,7 @@ public class ServiceCoreMstProduct {
 		return repoCmpr.findAll();
 	}
 	
-	public Optional<CoreMstProduct> getPrCode(Integer code){
+	public List<CoreMstProduct> getPrCode(Integer code){
 	    return repoCmpr.findBycmprCode(code);
 	}
 	
