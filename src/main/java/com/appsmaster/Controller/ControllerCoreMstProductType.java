@@ -47,7 +47,7 @@ public class ControllerCoreMstProductType {
 	}
 	
 	@GetMapping("/appmst/getCmprTypeSingle")
-	public Optional<CoreMstProductType> getPrTypeCode(Integer code, Integer typecode) {
+	public List<CoreMstProductType> getPrTypeCode(Integer code, Integer typecode) {
 		return servCmprt.getPrTypeCode(code, typecode);
 	}
 	

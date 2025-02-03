@@ -14,6 +14,6 @@ public interface ICoreMstProductTypeRepository extends JpaRepository<CoreMstProd
 	
 	public List<CoreMstProductType> findByCmprtCmprCode(Integer CmprCode);
 	
-	Optional<CoreMstProductType> findBycmprtCmprCodeAndCmprtCode(Integer code, Integer typecode);
+	public List<CoreMstProductType> findBycmprtCmprCodeAndCmprtCode(Integer code, Integer typecode);
 
 }

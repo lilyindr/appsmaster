@@ -32,7 +32,7 @@ public class ServiceCoreMstProductType {
 		return repoCmprt.findByCmprtCmprCode(CmprCode);
 	}
 	
-	public Optional<CoreMstProductType> getPrTypeCode(Integer code, Integer typecode){
+	public List<CoreMstProductType> getPrTypeCode(Integer code, Integer typecode){
 	    return repoCmprt.findBycmprtCmprCodeAndCmprtCode(code, typecode);
 	}
 	
