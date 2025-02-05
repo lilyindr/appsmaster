@@ -107,14 +107,42 @@ public class ControllerCoreMstProductType {
 	
 
 	@PostMapping("/appmst/UpdateProducttypes")
-	 public String UpdateRequest (@RequestParam String id, 
+	 public String UpdateRequest (@RequestParam String id,
+			        @RequestParam String  prodtypeid,
 				 	@RequestParam String userid, 
-				 	@RequestParam String  NoRequest,
 		            @RequestPart("data") CoreMstProductType data,
 		            @RequestPart(value = "file1", required = false) MultipartFile file1) 
 		            		throws IOException {
 		 return servCmprt.update( data, file1);
 	 }
 	
+	@GetMapping(value = "/images/producttypebyprodtype", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<String>> getAllImagesInProductbyProdtype(@RequestParam Integer no , @RequestParam Integer typeno ) throws IOException {	
+	    String sql = "SELECT cmprt_img_filename, cmprt_img_filepath FROM irasia.core_mst_product_type where cmprt_cmpr_code=:no and cmprt_code=:typeno";
+	    Query query = entityManager.createNativeQuery(sql);
+	    query.setParameter("no", no);
+	    query.setParameter("typeno", typeno);
+	    List<Object[]> results = query.getResultList(); // Get all results
+	    List<String> imageUrls = new ArrayList<>();
+	    String baseUrl = "http://localhost:8090/am-svc/images/producttypeImgsgl/";
+
+	    for (Object[] result : results) { // Iterate through each result
+	        String filename = (String) result[0];
+	        String filepath = (String) result[1];
+	        System.out.println("aaaaaaa :"+filename+ " --- "+filepath);
+	       
+	        if (filename != null && !filename.isEmpty() && filepath != null && !filepath.isEmpty()) {
+	            Path imagePath = Paths.get("D:\\iasia\\UI\\IMAGES\\ProductTypes");
+	            if (Files.exists(imagePath)) {
+	                imageUrls.add(baseUrl + filename);
+	            }
+	        }
+	    }
+	    if (!imageUrls.isEmpty()) {
+	        return ResponseEntity.ok(imageUrls);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
+	}
 
 }
